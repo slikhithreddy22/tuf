@@ -1,4 +1,7 @@
 #include <bits/stdc++.h>
+#include <deque>
+#include <map>
+#include <queue>
 #include <utility>
 #include <vector>
 using namespace std;
@@ -112,6 +115,57 @@ void explainVectors() {
        << endl; // return boolean, true if vector was empty else false
 }
 
+void explainList() { // list is same as vector but it will give front operations
+                     // as well
+  list<int> ls;
+  ls.push_back(2);
+  ls.emplace_back(3);
+  ls.push_front(1);
+  ls.emplace_front(0);
+}
+
+void explainDeque() { // same as list
+  deque<int> dq;
+}
+
+void explainStack() {
+  stack<int> st;
+  st.push(1);    // {1}
+  st.push(2);    // {2,1}
+  st.push(3);    // {3,2,1}
+  st.push(3);    // {3,3,2,1}
+  st.emplace(5); // {5,3,3,2,1}
+
+  cout << "Top element is " << st.top() << endl; // prints 5
+  st.pop();
+  cout << "Top element is " << st.top() << endl; // print 3
+  cout << "The size of stack is " << st.size() << endl;
+  cout << "Is the stack is empty " << st.empty() << endl;
+  stack<int> st1, st2;
+  st1.swap(st2);
+}
+
+void explainQueue() {
+  queue<int> q;
+  q.push(1);
+  q.push(2);
+  q.emplace(0);
+
+  cout << "Top last element is " << q.back() << endl;
+  cout << "for first element it is q.front() so now " << q.front() << endl;
+  q.pop();
+}
+
+// set : sorted && unique
+// multiset : sorted && non unique
+// unordered set : non sorted && unique
+
+void explainMap() {
+  map<int, int> mpp;
+  mpp[1] = 1;
+  mpp.emplace(2, 2);
+  mpp.insert({3, 3});
+}
 int main() {
   printLines("1.Functions");
   printMyName("Likhith Reddy");
