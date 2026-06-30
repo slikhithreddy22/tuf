@@ -18,6 +18,5 @@ int main() {
   int n = graph.size();
   vector<bool> visited(n, false);
   dfs(0, graph, visited);
-
   return 0;
 }
